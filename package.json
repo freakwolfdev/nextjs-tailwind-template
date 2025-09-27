@@ -8,8 +8,10 @@
     "dev:path": "pathpida --ignorePath .gitignore --watch",
     "build": "pathpida --ignorePath .gitignore && next build --turbopack",
     "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
+   "lint": "biome check ./src",
+    "lint:fix": "biome lint --write ./src",
+    "format": "biome format --write ./src",
+    "check": "biome check --write ./src"
   },
   "dependencies": {
     "next": "15.5.4",

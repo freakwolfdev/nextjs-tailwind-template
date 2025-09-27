@@ -1,6 +1,3 @@
-import Link from "next/link";
-import { pagesPath } from "@/lib/$path";
-
 const App = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4">
@@ -19,7 +16,8 @@ const App = () => {
                 ⚡ Next.js + React
               </h3>
               <p className="text-gray-300">
-                Full-stack React framework with App Router and TypeScript support
+                Full-stack React framework with App Router and TypeScript
+                support
               </p>
             </div>
 
