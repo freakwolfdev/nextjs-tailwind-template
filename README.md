@@ -142,6 +142,42 @@ The template includes optimized Biome configuration for:
 - **Accessibility** - ARIA, semantic HTML
 - **Performance** - Bundle optimization
 
+### IDE Integration
+
+For the best development experience, install the **Biome extension**:
+
+#### VS Code Extension
+
+1. **Install the extension:**
+   ```bash
+   # Via VS Code Extensions marketplace
+   # Search for "Biome" by biomejs
+   ```
+
+2. **Or install via command line:**
+   ```bash
+   code --install-extension biomejs.biome
+   ```
+
+3. **Configure VS Code settings** (optional):
+   ```json
+   {
+     "editor.defaultFormatter": "biomejs.biome",
+     "editor.formatOnSave": true,
+     "editor.codeActionsOnSave": {
+       "quickfix.biome": "explicit",
+       "source.organizeImports.biome": "explicit"
+     }
+   }
+   ```
+
+#### Other IDEs
+
+- **WebStorm/IntelliJ**: Install via JetBrains Marketplace
+- **Sublime Text**: Install via Package Control
+- **Vim/Neovim**: Use `biome` LSP client
+- **Emacs**: Use `lsp-mode` with Biome
+
 ### Usage
 
 ```bash
@@ -157,6 +193,17 @@ bun format
 # Format and fix in one command
 bun format --write
 ```
+
+### Extension Benefits
+
+With the Biome extension installed, you get:
+
+- **Real-time linting** - See issues as you type
+- **Auto-formatting** - Format on save or manual trigger
+- **Quick fixes** - One-click fixes for auto-fixable issues
+- **Import organization** - Automatic import sorting
+- **TypeScript support** - Full TS/TSX integration
+- **Performance** - Lightning-fast feedback
 
 ## 🛣️ Type-Safe Routing with Pathpida
 
