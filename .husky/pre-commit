@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run type checking
+echo "🔍 Running TypeScript type checking..."
+bun run tsc --noEmit
+
+# Run linting and formatting checks
+echo "🧹 Running Biome linting and formatting checks..."
+bun run check
+
+echo "✅ All checks passed! Proceeding with commit..."
