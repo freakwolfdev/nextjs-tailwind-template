@@ -6,10 +6,11 @@ A modern, production-ready Next.js template with the latest tools and best pract
 
 - **Next.js 15.5.4** - Latest React framework with App Router
 - **React 19.1.0** - Latest React with concurrent features
-- **Tailwind CSS v4** - Next-generation utility-first CSS framework
+- **Tailwind CSS 4.1.13** - Next-generation utility-first CSS framework
 - **Biome 2.2.4** - Ultra-fast linter and formatter
-- **TypeScript 5** - Full type safety
-- **Pathpida** - Type-safe routing with auto-generated paths
+- **TypeScript 5.9.2** - Full type safety
+- **Husky 9.1.7** - Git hooks for code quality
+- **Pathpida 0.25.0** - Type-safe routing with auto-generated paths
 - **Turbopack** - Lightning-fast bundling
 - **Bun Support** - Ultra-fast package manager
 
@@ -28,19 +29,20 @@ A modern, production-ready Next.js template with the latest tools and best pract
 | Package | Version | Purpose | Benefits |
 |---------|---------|---------|----------|
 | **@biomejs/biome** | 2.2.4 | Linter & formatter | 10-100x faster than ESLint/Prettier, single tool |
-| **tailwindcss** | 4.0.0 | CSS framework | Utility-first, JIT compilation, design system |
-| **@tailwindcss/postcss** | 4.0.0 | PostCSS integration | Seamless Tailwind processing |
+| **tailwindcss** | 4.1.13 | CSS framework | Utility-first, JIT compilation, design system |
+| **@tailwindcss/postcss** | 4.1.13 | PostCSS integration | Seamless Tailwind processing |
+| **husky** | 9.1.7 | Git hooks | Pre-commit quality checks, automated workflows |
 | **pathpida** | 0.25.0 | Type-safe routing | Auto-generated paths, type safety, refactoring support |
-| **typescript** | 5.x | Type system | Static typing, better DX, fewer runtime errors |
+| **typescript** | 5.9.2 | Type system | Static typing, better DX, fewer runtime errors |
 | **npm-run-all** | 4.1.5 | Script runner | Parallel script execution |
 
 ### Type Definitions
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| **@types/node** | 20.x | Node.js type definitions |
-| **@types/react** | 19.x | React type definitions |
-| **@types/react-dom** | 19.x | React DOM type definitions |
+| **@types/node** | 20.19.18 | Node.js type definitions |
+| **@types/react** | 19.1.16 | React type definitions |
+| **@types/react-dom** | 19.1.9 | React DOM type definitions |
 
 ## 🛠️ Development Workflow
 
@@ -84,6 +86,9 @@ bun lint
 
 # Format code
 bun format
+
+# Run all quality checks (pre-commit)
+bun run check
 ```
 
 ### Development Server
@@ -204,6 +209,100 @@ With the Biome extension installed, you get:
 - **Import organization** - Automatic import sorting
 - **TypeScript support** - Full TS/TSX integration
 - **Performance** - Lightning-fast feedback
+
+## 🪝 Pre-commit Hooks with Husky
+
+**Husky** provides automated code quality checks before every commit:
+
+### Benefits
+- **Prevents bad commits** - Blocks commits with errors
+- **Automated quality checks** - TypeScript + linting on every commit
+- **Team consistency** - Same checks for all developers
+- **Zero configuration** - Works out of the box
+- **Fast feedback** - Immediate error detection
+
+### What Gets Checked
+
+The pre-commit hook automatically runs:
+
+1. **📝 TypeScript Type Checking**
+   - Compiles TypeScript without emitting files
+   - Catches type errors and compilation issues
+   - Ensures type safety across the codebase
+
+2. **🧹 Biome Linting & Formatting**
+   - Code style and formatting checks
+   - Potential bugs and code quality issues
+   - Auto-fixes when possible
+
+### Pre-commit Process
+
+When you commit, you'll see:
+
+```bash
+🚀 Starting pre-commit checks...
+
+📝 Step 1/2: Running TypeScript type checking...
+   Checking for type errors and compilation issues...
+✅ TypeScript type checking passed!
+
+🧹 Step 2/2: Running Biome linting and formatting checks...
+   Checking code style, formatting, and potential issues...
+✅ Linting and formatting checks passed!
+
+✅ All checks passed! Proceeding with commit...
+```
+
+### Error Handling
+
+If checks fail, the commit is blocked with clear error messages:
+
+```bash
+❌ TypeScript type checking failed!
+   Please fix the type errors before committing.
+
+❌ Linting and formatting checks failed!
+   Please fix the linting issues before committing.
+```
+
+### Manual Testing
+
+You can run the same checks manually:
+
+```bash
+# Run all pre-commit checks
+bun run check
+
+# Run TypeScript checking only
+bunx tsc --noEmit
+
+# Run linting only
+bun run lint
+```
+
+### Configuration
+
+The pre-commit hook is configured in `.husky/pre-commit`:
+
+```bash
+# Run type checking
+echo "🔍 Running TypeScript type checking..."
+bunx tsc --noEmit
+
+# Run linting and formatting checks
+echo "🧹 Running Biome linting and formatting checks..."
+bun run check
+
+echo "✅ All checks passed! Proceeding with commit..."
+```
+
+### Benefits for Teams
+
+- **Consistent code quality** - Everyone follows the same standards
+- **Fewer bugs** - Catch issues before they reach the repository
+- **Faster reviews** - Code is already formatted and linted
+- **Better git history** - Clean, error-free commits
+- **Reduced CI failures** - Local checks prevent remote failures
 
 ## 🛣️ Type-Safe Routing with Pathpida
 
