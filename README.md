@@ -93,7 +93,7 @@ bun run check
 
 ### Development Server
 
-The development server runs on [http://localhost:3000](http://localhost:3000) with:
+The development server runs on [http://localhost:5172](http://localhost:5172) with:
 
 - **Turbopack** - Lightning-fast bundling (up to 10x faster than Webpack)
 - **Hot Module Replacement** - Instant updates
