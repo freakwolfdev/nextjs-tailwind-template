@@ -15,7 +15,7 @@ const App = () => {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-12">
+      <main className="px-6 py-12" test>
         <div className="mx-auto max-w-4xl">
           {/* Tech Stack */}
           <section className="mb-12">
