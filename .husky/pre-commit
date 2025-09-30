@@ -25,5 +25,4 @@ fi
 echo "✅ Linting and formatting checks passed!"
 echo ""
 
-echo "✅ All checks passed"
 echo "✅ All checks passed! Proceeding with commit..."
