@@ -6,9 +6,9 @@ A modern, production-ready Next.js template with the latest tools and best pract
 
 - **Next.js 15.5.4** - Latest React framework with App Router
 - **React 19.1.0** - Latest React with concurrent features
-- **Tailwind CSS 4.1.13** - Next-generation utility-first CSS framework
-- **Biome 2.2.4** - Ultra-fast linter and formatter
-- **TypeScript 5.9.2** - Full type safety
+- **Tailwind CSS 4.1.14** - Next-generation utility-first CSS framework
+- **Biome 2.2.5** - Ultra-fast linter and formatter
+- **TypeScript 5.9.3** - Full type safety
 - **Husky 9.1.7** - Git hooks for code quality
 - **Pathpida 0.25.0** - Type-safe routing with auto-generated paths
 - **Turbopack** - Lightning-fast bundling
@@ -28,21 +28,21 @@ A modern, production-ready Next.js template with the latest tools and best pract
 
 | Package | Version | Purpose | Benefits |
 |---------|---------|---------|----------|
-| **@biomejs/biome** | 2.2.4 | Linter & formatter | 10-100x faster than ESLint/Prettier, single tool |
-| **tailwindcss** | 4.1.13 | CSS framework | Utility-first, JIT compilation, design system |
-| **@tailwindcss/postcss** | 4.1.13 | PostCSS integration | Seamless Tailwind processing |
+| **@biomejs/biome** | 2.2.5 | Linter & formatter | 10-100x faster than ESLint/Prettier, single tool |
+| **tailwindcss** | 4.1.14 | CSS framework | Utility-first, JIT compilation, design system |
+| **@tailwindcss/postcss** | 4.1.14 | PostCSS integration | Seamless Tailwind processing |
 | **husky** | 9.1.7 | Git hooks | Pre-commit quality checks, automated workflows |
 | **pathpida** | 0.25.0 | Type-safe routing | Auto-generated paths, type safety, refactoring support |
-| **typescript** | 5.9.2 | Type system | Static typing, better DX, fewer runtime errors |
+| **typescript** | 5.9.3 | Type system | Static typing, better DX, fewer runtime errors |
 | **npm-run-all** | 4.1.5 | Script runner | Parallel script execution |
 
 ### Type Definitions
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| **@types/node** | 20.19.18 | Node.js type definitions |
-| **@types/react** | 19.1.16 | React type definitions |
-| **@types/react-dom** | 19.1.9 | React DOM type definitions |
+| **@types/node** | 20.19.19 | Node.js type definitions |
+| **@types/react** | 19.2.0 | React type definitions |
+| **@types/react-dom** | 19.2.0 | React DOM type definitions |
 
 ## 🛠️ Development Workflow
 
