@@ -7,7 +7,7 @@ A modern, production-ready Next.js template with the latest tools and best pract
 - **Next.js 15.5.4** - Latest React framework with App Router
 - **React 19.1.0** - Latest React with concurrent features
 - **Tailwind CSS 4.1.14** - Next-generation utility-first CSS framework
-- **Biome 2.2.5** - Ultra-fast linter and formatter
+- **Biome 2.2.6** - Ultra-fast linter and formatter
 - **TypeScript 5.9.3** - Full type safety
 - **Husky 9.1.7** - Git hooks for code quality
 - **Pathpida 0.25.0** - Type-safe routing with auto-generated paths
@@ -28,7 +28,7 @@ A modern, production-ready Next.js template with the latest tools and best pract
 
 | Package | Version | Purpose | Benefits |
 |---------|---------|---------|----------|
-| **@biomejs/biome** | 2.2.5 | Linter & formatter | 10-100x faster than ESLint/Prettier, single tool |
+| **@biomejs/biome** | 2.2.6 | Linter & formatter | 10-100x faster than ESLint/Prettier, single tool |
 | **tailwindcss** | 4.1.14 | CSS framework | Utility-first, JIT compilation, design system |
 | **@tailwindcss/postcss** | 4.1.14 | PostCSS integration | Seamless Tailwind processing |
 | **husky** | 9.1.7 | Git hooks | Pre-commit quality checks, automated workflows |
