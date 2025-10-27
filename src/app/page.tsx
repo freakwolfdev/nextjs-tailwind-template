@@ -26,7 +26,7 @@ const App = () => {
               <div className="rounded border border-gray-700 bg-gray-800 p-4">
                 <div className="mb-2 flex items-center gap-2">
                   <span className="text-green-400">✓</span>
-                  <code className="text-blue-400">Next.js 15.5.4</code>
+                  <code className="text-blue-400">Next.js 16.0.0</code>
                 </div>
                 <p className="text-gray-400 text-sm">
                   Full-stack React framework with App Router and server
@@ -37,7 +37,7 @@ const App = () => {
               <div className="rounded border border-gray-700 bg-gray-800 p-4">
                 <div className="mb-2 flex items-center gap-2">
                   <span className="text-green-400">✓</span>
-                  <code className="text-blue-400">React 19.1.0</code>
+                  <code className="text-blue-400">React 19.2.0</code>
                 </div>
                 <p className="text-gray-400 text-sm">
                   Latest React with concurrent features and improved performance

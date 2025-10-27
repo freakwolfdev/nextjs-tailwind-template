@@ -1,9 +1,6 @@
 const buildSuffix = (url?: {
-  query?: Record<
-    string,
-    string | number | boolean | Array<string | number | boolean>
-  >;
-  hash?: string;
+  query?: Record<string, string | number | boolean | Array<string | number | boolean>>,
+  hash?: string
 }) => {
   const query = url?.query;
   const hash = url?.hash;
@@ -15,7 +12,9 @@ const buildSuffix = (url?: {
 
     Object.entries(query).forEach(([key, value]) => {
       if (Array.isArray(value)) {
-        value.forEach((item) => params.append(key, String(item)));
+        value.forEach((item) =>
+          params.append(key, String(item))
+        );
       } else {
         params.set(key, String(value));
       }
@@ -27,11 +26,7 @@ const buildSuffix = (url?: {
 };
 
 export const pagesPath = {
-  $url: (url?: { hash?: string }) => ({
-    pathname: '/' as const,
-    hash: url?.hash,
-    path: `/${buildSuffix(url)}`,
-  }),
+  $url: (url?: { hash?: string }) => ({ pathname: '/' as const, hash: url?.hash, path: `/${buildSuffix(url)}` })
 };
 
 export type PagesPath = typeof pagesPath;

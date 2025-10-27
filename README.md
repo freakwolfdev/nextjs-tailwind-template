@@ -4,8 +4,8 @@ A modern, production-ready Next.js template with the latest tools and best pract
 
 ## 🚀 Features
 
-- **Next.js 15.5.4** - Latest React framework with App Router
-- **React 19.1.0** - Latest React with concurrent features
+- **Next.js 16.0.0** - Latest React framework with App Router
+- **React 19.2.0** - Latest React with concurrent features
 - **Tailwind CSS 4.1.16** - Next-generation utility-first CSS framework
 - **Biome 2.3.1** - Ultra-fast linter and formatter
 - **TypeScript 5.9.3** - Full type safety
@@ -20,9 +20,9 @@ A modern, production-ready Next.js template with the latest tools and best pract
 
 | Package | Version | Purpose | Benefits |
 |---------|---------|---------|----------|
-| **next** | 15.5.4 | React framework | Full-stack capabilities, SSR/SSG, API routes, middleware |
-| **react** | 19.1.0 | UI library | Concurrent features, automatic batching, improved performance |
-| **react-dom** | 19.1.0 | React DOM renderer | Server components, hydration optimization |
+| **next** | 16.0.0 | React framework | Full-stack capabilities, SSR/SSG, API routes, middleware |
+| **react** | 19.2.0 | UI library | Concurrent features, automatic batching, improved performance |
+| **react-dom** | 19.2.0 | React DOM renderer | Server components, hydration optimization |
 
 ### Development Tools
 
@@ -40,9 +40,9 @@ A modern, production-ready Next.js template with the latest tools and best pract
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| **@types/node** | 20.19.19 | Node.js type definitions |
-| **@types/react** | 19.2.0 | React type definitions |
-| **@types/react-dom** | 19.2.0 | React DOM type definitions |
+| **@types/node** | 24.9.1 | Node.js type definitions |
+| **@types/react** | 19.2.2 | React type definitions |
+| **@types/react-dom** | 19.2.2 | React DOM type definitions |
 
 ## 🛠️ Development Workflow
 
