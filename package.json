@@ -1,6 +1,6 @@
 {
   "name": "nextjs-tailwind4-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "dev": "run-p dev:*",
@@ -21,14 +21,14 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.6",
-    "@tailwindcss/postcss": "^4.1.14",
-    "@types/node": "^20.19.21",
+    "@biomejs/biome": "^2.3.1",
+    "@tailwindcss/postcss": "^4.1.16",
+    "@types/node": "^20.19.23",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "husky": "^9.1.7",
     "pathpida": "^0.25.0",
-    "tailwindcss": "^4.1.14",
+    "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3"
   }
 }
