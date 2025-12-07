@@ -9,7 +9,7 @@ A modern, production-ready Next.js template with the latest tools and best pract
 - **Tailwind CSS 4.1.17** - Next-generation utility-first CSS framework
 - **Biome 2.3.8** - Ultra-fast linter and formatter
 - **TypeScript 5.9.3** - Full type safety
-- **Husky 9.1.7** - Git hooks for code quality
+- **Lefthook 2.0.8** - Git hooks for code quality
 - **Pathpida 0.25.0** - Type-safe routing with auto-generated paths
 - **Turbopack** - Lightning-fast bundling
 - **Bun Support** - Ultra-fast package manager
@@ -31,7 +31,7 @@ A modern, production-ready Next.js template with the latest tools and best pract
 | **@biomejs/biome** | 2.3.8 | Linter & formatter | 10-100x faster than ESLint/Prettier, single tool |
 | **tailwindcss** | 4.1.17 | CSS framework | Utility-first, JIT compilation, design system |
 | **@tailwindcss/postcss** | 4.1.17 | PostCSS integration | Seamless Tailwind processing |
-| **husky** | 9.1.7 | Git hooks | Pre-commit quality checks, automated workflows |
+| **lefthook** | 2.0.8 | Git hooks | Pre-commit quality checks, automated workflows |
 | **pathpida** | 0.25.0 | Type-safe routing | Auto-generated paths, type safety, refactoring support |
 | **typescript** | 5.9.3 | Type system | Static typing, better DX, fewer runtime errors |
 | **npm-run-all** | 4.1.5 | Script runner | Parallel script execution |
@@ -87,8 +87,11 @@ bun lint
 # Format code
 bun format
 
-# Run all quality checks (pre-commit)
-bun run check
+# Fix linting issues
+bun run fix
+
+# Type check
+bun run type-check
 ```
 
 ### Development Server
@@ -210,45 +213,61 @@ With the Biome extension installed, you get:
 - **TypeScript support** - Full TS/TSX integration
 - **Performance** - Lightning-fast feedback
 
-## 🪝 Pre-commit Hooks with Husky
+## 🪝 Pre-commit Hooks with Lefthook
 
-**Husky** provides automated code quality checks before every commit:
+**Lefthook** provides automated code quality checks before every commit:
 
 ### Benefits
 - **Prevents bad commits** - Blocks commits with errors
 - **Automated quality checks** - TypeScript + linting on every commit
 - **Team consistency** - Same checks for all developers
-- **Zero configuration** - Works out of the box
+- **Fast and efficient** - Runs checks in parallel when possible
 - **Fast feedback** - Immediate error detection
 
 ### What Gets Checked
 
 The pre-commit hook automatically runs:
 
-1. **📝 TypeScript Type Checking**
+1. **🧹 Biome Linting**
+   - Code style and quality checks
+   - Potential bugs and code quality issues
+   - Error on warnings for strict enforcement
+
+2. **✨ Biome Formatting**
+   - Code formatting checks
+   - Ensures consistent code style
+
+3. **📝 TypeScript Type Checking**
    - Compiles TypeScript without emitting files
    - Catches type errors and compilation issues
    - Ensures type safety across the codebase
 
-2. **🧹 Biome Linting & Formatting**
-   - Code style and formatting checks
-   - Potential bugs and code quality issues
-   - Auto-fixes when possible
+4. **🏗️ Build Check**
+   - Verifies the project builds successfully
+   - Catches build-time errors before commit
+
+### Pre-push Hook
+
+The pre-push hook automatically runs:
+
+- **🔧 Auto-fix** - Automatically fixes linting issues before pushing
 
 ### Pre-commit Process
 
-When you commit, you'll see:
+When you commit, Lefthook automatically runs all checks:
 
 ```bash
-🚀 Starting pre-commit checks...
+🧹 Running Biome linting...
+✅ Linting passed!
 
-📝 Step 1/2: Running TypeScript type checking...
-   Checking for type errors and compilation issues...
-✅ TypeScript type checking passed!
+✨ Running Biome formatting...
+✅ Formatting passed!
 
-🧹 Step 2/2: Running Biome linting and formatting checks...
-   Checking code style, formatting, and potential issues...
-✅ Linting and formatting checks passed!
+📝 Running TypeScript type checking...
+✅ Type checking passed!
+
+🏗️ Running build check...
+✅ Build passed!
 
 ✅ All checks passed! Proceeding with commit...
 ```
@@ -258,11 +277,11 @@ When you commit, you'll see:
 If checks fail, the commit is blocked with clear error messages:
 
 ```bash
+❌ Biome linting failed!
+   Please fix the linting issues before committing.
+
 ❌ TypeScript type checking failed!
    Please fix the type errors before committing.
-
-❌ Linting and formatting checks failed!
-   Please fix the linting issues before committing.
 ```
 
 ### Manual Testing
@@ -270,30 +289,43 @@ If checks fail, the commit is blocked with clear error messages:
 You can run the same checks manually:
 
 ```bash
-# Run all pre-commit checks
-bun run check
+# Run linting
+bun lint
 
-# Run TypeScript checking only
-bunx tsc --noEmit
+# Format code
+bun format
 
-# Run linting only
-bun run lint
+# Fix linting issues
+bun run fix
+
+# Type check
+bun run type-check
+
+# Run all checks (what pre-commit does)
+bun lint && bun format && bun run type-check && bun build
 ```
 
 ### Configuration
 
-The pre-commit hook is configured in `.husky/pre-commit`:
+The git hooks are configured in `lefthook.yml`:
 
-```bash
-# Run type checking
-echo "🔍 Running TypeScript type checking..."
-bunx tsc --noEmit
+```yaml
+pre-commit:
+  parallel: false
+  commands:
+    biome-check:
+      run: bun run lint
+    biome-format:
+      run: bun run format
+    type-check:
+      run: bun run type-check
+    build:
+      run: bun run build
 
-# Run linting and formatting checks
-echo "🧹 Running Biome linting and formatting checks..."
-bun run check
-
-echo "✅ All checks passed! Proceeding with commit..."
+pre-push:
+  commands:
+    fix:
+      run: bun run fix
 ```
 
 ### Benefits for Teams
@@ -303,6 +335,7 @@ echo "✅ All checks passed! Proceeding with commit..."
 - **Faster reviews** - Code is already formatted and linted
 - **Better git history** - Clean, error-free commits
 - **Reduced CI failures** - Local checks prevent remote failures
+- **Auto-fix on push** - Automatically fixes issues before pushing
 
 ## 🛣️ Type-Safe Routing with Pathpida
 

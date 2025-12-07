@@ -118,9 +118,9 @@ const App = () => {
               </div>
 
               <div className="rounded bg-gray-900 p-4">
-                <code className="text-green-400">$ bun run check</code>
+                <code className="text-green-400">$ bun run fix</code>
                 <p className="mt-2 text-gray-400 text-sm">
-                  Run linting and type checking
+                  Fix linting issues automatically
                 </p>
               </div>
 
