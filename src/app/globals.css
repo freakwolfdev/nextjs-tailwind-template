@@ -22,3 +22,16 @@ body {
 code {
   font-family: "Fira Code", "JetBrains Mono", "Courier New", monospace;
 }
+
+@keyframes loading-dots {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
