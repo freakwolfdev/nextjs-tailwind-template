@@ -4,13 +4,13 @@ A modern, production-ready Next.js template with the latest tools and best pract
 
 ## 🚀 Features
 
-- **Next.js 16.1.6** - Latest React framework with App Router
+- **Next.js 16.2.2** - Latest React framework with App Router
 - **React 19.2.4** - Latest React with concurrent features
-- **Tailwind CSS 4.1.18** - Next-generation utility-first CSS framework
-- **Biome 2.3.13** - Ultra-fast linter and formatter
-- **TypeScript 5.9.3** - Full type safety
-- **Lefthook 2.0.16** - Git hooks for code quality
-- **Pathpida 0.25.0** - Type-safe routing with auto-generated paths
+- **Tailwind CSS 4.2.2** - Next-generation utility-first CSS framework
+- **Biome 2.4.10** - Ultra-fast linter and formatter
+- **TypeScript 6.0.2** - Full type safety
+- **Lefthook 2.1.5** - Git hooks for code quality
+- **Pathpida 0.26.1** - Type-safe routing with auto-generated paths
 - **Turbopack** - Lightning-fast bundling
 - **Bun Support** - Ultra-fast package manager
 
@@ -20,7 +20,7 @@ A modern, production-ready Next.js template with the latest tools and best pract
 
 | Package | Version | Purpose | Benefits |
 |---------|---------|---------|----------|
-| **next** | 16.1.6 | React framework | Full-stack capabilities, SSR/SSG, API routes, middleware |
+| **next** | 16.2.2 | React framework | Full-stack capabilities, SSR/SSG, API routes, middleware |
 | **react** | 19.2.4 | UI library | Concurrent features, automatic batching, improved performance |
 | **react-dom** | 19.2.4 | React DOM renderer | Server components, hydration optimization |
 
@@ -28,20 +28,20 @@ A modern, production-ready Next.js template with the latest tools and best pract
 
 | Package | Version | Purpose | Benefits |
 |---------|---------|---------|----------|
-| **@biomejs/biome** | 2.3.13 | Linter & formatter | 10-100x faster than ESLint/Prettier, single tool |
-| **tailwindcss** | 4.1.18 | CSS framework | Utility-first, JIT compilation, design system |
-| **@tailwindcss/postcss** | 4.1.18 | PostCSS integration | Seamless Tailwind processing |
-| **lefthook** | 2.0.16 | Git hooks | Pre-commit quality checks, automated workflows |
-| **pathpida** | 0.25.0 | Type-safe routing | Auto-generated paths, type safety, refactoring support |
-| **typescript** | 5.9.3 | Type system | Static typing, better DX, fewer runtime errors |
+| **@biomejs/biome** | 2.4.10 | Linter & formatter | 10-100x faster than ESLint/Prettier, single tool |
+| **tailwindcss** | 4.2.2 | CSS framework | Utility-first, JIT compilation, design system |
+| **@tailwindcss/postcss** | 4.2.2 | PostCSS integration | Seamless Tailwind processing |
+| **lefthook** | 2.1.5 | Git hooks | Pre-commit quality checks, automated workflows |
+| **pathpida** | 0.26.1 | Type-safe routing | Auto-generated paths, type safety, refactoring support |
+| **typescript** | 6.0.2 | Type system | Static typing, better DX, fewer runtime errors |
 | **npm-run-all** | 4.1.5 | Script runner | Parallel script execution |
 
 ### Type Definitions
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| **@types/node** | 24.10.9 | Node.js type definitions |
-| **@types/react** | 19.2.10 | React type definitions |
+| **@types/node** | 25.5.2 | Node.js type definitions |
+| **@types/react** | 19.2.14 | React type definitions |
 | **@types/react-dom** | 19.2.3 | React DOM type definitions |
 
 ## 🛠️ Development Workflow
